@@ -70,3 +70,22 @@ zeroToHundred = [0..100]
 evenList = [2,4..100]
 
 oddList = [1,3..100]
+
+many2 = take 10 (repeat 2)
+
+cycleList = [1,2,3,4,5,6,7]
+
+anotheCycleList = take 2 (cycle cycleList ) -- Cycle only active when n > len list
+
+listTimes3 = [zaa * 3 | zaa <- [1..10], zaa*3 <= 20]
+
+divisible13Or9 = [zaa | zaa <- [1..500], zaa `mod` 13 == 0 , zaa `mod` 9 == 0]
+
+sortedList = sort [9,1,2,3,893,23,1,0,23]
+
+sumOflist = zipWith (+) [1,2,3,4,5,6,7] [6,4,3,1,2,1,2] -- Using prefix
+
+
+filterInRange :: Ord a => a -> a -> [a] -> [a]
+filterInRange minVal maxVal = filter(\x -> x >= minVal && x <= maxVal) 
+listBiggerThen = sort ( filterInRange 10 20 [1,2,3, 18, 20,19,3,11,9] )
